@@ -17,7 +17,6 @@
   wayland.windowManager.hyprland.settings = {
     input = {
       kb_layout = "de";
-      accel_profile = "flat";
       touchpad.scroll_factor = 0.7;
     };
 
@@ -65,6 +64,17 @@
       "$mod, 0, workspace, 10"
     ];
 
+    monitor = [
+      "eDP-1, 1920x1080@60, 0x0, 1.25"
+      "DP-1, 3840x2160@60, auto-center-right, 1.5"
+    ];
+
+    general = {
+      gaps_out = 10;
+      "col.active_border" = "rgba(afafafaf)";
+      "col.inactive_border" = "rgba(595959aa)";
+      resize_on_border = true;
+    };
     decoration.rounding = 15;
   };
 }
