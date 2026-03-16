@@ -15,7 +15,11 @@
   };
 
   wayland.windowManager.hyprland.settings = {
-    input.kb_layout = "de";
+    input = {
+      kb_layout = "de";
+      accel_profile = "flat";
+      touchpad.scroll_factor = 0.7;
+    };
 
     exec-once = [
       "waybar"
