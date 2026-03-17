@@ -2,16 +2,18 @@
 
 {
 
-  home.packages = with pkgs; [
-    rofi
-  ];
-
   wayland.windowManager.hyprland = {
     enable = true;
 
     # use packages from NixOS module
     package = null;
     portalPackage = null;
+  };
+
+  # VICINAE
+  programs.vicinae = {
+    enable = true;
+    systemd.enable = true;
   };
 
   wayland.windowManager.hyprland.settings = {
@@ -31,7 +33,7 @@
       "$mod, Q, exec, alacritty"
       "$mod, E, exec, nautilus"
       "$mod, W, killactive,"
-      "$mod, SPACE, exec, rofi -show drun"
+      "$mod, SPACE, exec, vicinae toggle"
 
       # MULTIMEDIA CONTROLS
       ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ -l 1.0 5%+"
