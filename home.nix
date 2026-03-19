@@ -21,6 +21,7 @@
 
     # UTILITY
     nautilus
+    ffmpeg
 
     # DEV
     rustc
