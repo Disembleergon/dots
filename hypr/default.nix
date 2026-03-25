@@ -20,6 +20,7 @@
     input = {
       kb_layout = "de";
       touchpad.scroll_factor = 0.7;
+      touchpad.natural_scroll = true;
     };
 
     exec-once = [
