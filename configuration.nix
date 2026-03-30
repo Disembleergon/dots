@@ -1,11 +1,9 @@
-
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -26,7 +24,7 @@
 
   services.xserver.videoDrivers = [
     "modesetting"
-    "nvidia" 
+    "nvidia"
   ];
 
   hardware.nvidia = {
@@ -48,6 +46,18 @@
   # BLUETOOTH
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
+
+  # PRINTING
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.gutenprint ];
+  };
+
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
   # LOCALES
   time.timeZone = "Europe/Berlin";
@@ -76,7 +86,11 @@
   users.users.tom = {
     isNormalUser = true;
     description = "Tom Pekrul";
-    extraGroups = [ "networkmanager" "wheel" "video" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "video"
+    ];
   };
 
   # GREETD
@@ -102,6 +116,12 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
+  # LOCALSEND
+  programs.localsend = {
+    enable = true;
+    openFirewall = true;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -111,5 +131,8 @@
   ];
 
   system.stateVersion = "25.11";
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 }

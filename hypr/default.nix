@@ -1,11 +1,6 @@
-
 { pkgs, ... }:
 
 {
-
-  home.packages = with pkgs; [
-    rofi
-  ];
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -15,8 +10,18 @@
     portalPackage = null;
   };
 
+  # VICINAE
+  programs.vicinae = {
+    enable = true;
+    systemd.enable = true;
+  };
+
   wayland.windowManager.hyprland.settings = {
-    input.kb_layout = "de";
+    input = {
+      kb_layout = "de";
+      touchpad.scroll_factor = 0.7;
+      touchpad.natural_scroll = true;
+    };
 
     exec-once = [
       "waybar"
@@ -29,11 +34,11 @@
       "$mod, Q, exec, alacritty"
       "$mod, E, exec, nautilus"
       "$mod, W, killactive,"
-      "$mod, SPACE, exec, rofi -show drun"
+      "$mod, SPACE, exec, vicinae toggle"
 
       # MULTIMEDIA CONTROLS
-      ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-      ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ -l 1.0 5%+"
+      ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ -l 1.0 5%-"
       ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
       ",XF86MonBrightnessUp, exec, brightnessctl s 5%+"
       ",XF86MonBrightnessDown, exec, brightnessctl s 5%-"
@@ -62,8 +67,17 @@
       "$mod, 0, workspace, 10"
     ];
 
+    monitor = [
+      "eDP-1, 1920x1080@60, 0x0, 1.25"
+      "DP-1, 3840x2160@60, auto-center-right, 1.5"
+    ];
+
+    general = {
+      gaps_out = 10;
+      "col.active_border" = "rgba(afafafaf)";
+      "col.inactive_border" = "rgba(595959aa)";
+      resize_on_border = true;
+    };
     decoration.rounding = 15;
   };
 }
-
-
