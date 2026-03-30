@@ -90,9 +90,13 @@
   services.swww.enable = true;
 
   # ICON THEME
-  gtk.iconTheme = {
-    name = "Adwaita";
-    package = pkgs.adwaita-icon-theme;
+  gtk = {
+    enable = true;
+    gtk4.theme = null;
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+    };
   };
 
   # HYPRSUNSET
