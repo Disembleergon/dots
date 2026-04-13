@@ -79,5 +79,10 @@
       resize_on_border = true;
     };
     decoration.rounding = 15;
+
+    xwayland = {
+      enabled = true;
+      force_zero_scaling = true;
+    };
   };
 }
