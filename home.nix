@@ -1,7 +1,5 @@
 {
-  config,
   pkgs,
-  inputs,
   ...
 }:
 
@@ -59,6 +57,32 @@
     syntaxHighlighting.enable = true;
   };
 
+  # HELIX
+  programs.helix = {
+    enable = true;
+    settings = {
+      theme = "monokai_soda";
+      editor.cursor-shape = {
+        normal = "block";
+        insert = "bar";
+        select = "underline";
+      };
+    };
+
+    languages.language = [
+      {
+        name = "nix";
+        auto-format = true;
+        formatter.command = "nixfmt";
+      }
+    ];
+
+    extraPackages = with pkgs; [
+      nixd
+      nixfmt
+    ];
+  };
+
   # FZF
   programs.fzf = {
     enable = true;
@@ -97,21 +121,6 @@
       name = "Adwaita";
       package = pkgs.adwaita-icon-theme;
     };
-  };
-
-  # HYPRSUNSET
-  services.hyprsunset.enable = true;
-  services.hyprsunset.settings = {
-    profile = [
-      {
-        time = "8:00";
-        identity = true;
-      }
-      {
-        time = "19:30";
-        temperature = 4500;
-      }
-    ];
   };
 
   # HYPRSUNSET
