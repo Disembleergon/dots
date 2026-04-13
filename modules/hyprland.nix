@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
 
@@ -8,12 +8,6 @@
     # use packages from NixOS module
     package = null;
     portalPackage = null;
-  };
-
-  # VICINAE
-  programs.vicinae = {
-    enable = true;
-    systemd.enable = true;
   };
 
   wayland.windowManager.hyprland.settings = {
