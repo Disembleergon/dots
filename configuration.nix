@@ -122,6 +122,12 @@
     openFirewall = true;
   };
 
+  # TLP
+  services.tlp = {
+    enable = true;
+    pd.enable = true;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
