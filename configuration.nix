@@ -93,24 +93,16 @@
     ];
   };
 
-  # GREETD
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd start-hyprland";
-        user = "tom";
-      };
-    };
+  # KDE
+  services = {
+    displayManager.plasma-login-manager.enable = true;
+    desktopManager.plasma6.enable = true;
   };
 
   # FONT
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
-
-  # HYPRLAND
-  programs.hyprland.enable = true;
 
   # ZSH
   programs.zsh.enable = true;
@@ -122,18 +114,11 @@
     openFirewall = true;
   };
 
-  # TLP
-  services.tlp = {
-    enable = true;
-    pd.enable = true;
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # SYSTEM PACKAGES
-  environment.systemPackages = with pkgs; [
-    brightnessctl
+  environment.systemPackages = [
   ];
 
   system.stateVersion = "25.11";

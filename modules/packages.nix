@@ -1,11 +1,8 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # GENERAL
-    libreoffice-fresh
 
     # UTILITY
-    nautilus
     ffmpeg
 
     # DEV
@@ -28,6 +25,4 @@
   # GCC
   programs.gcc.enable = true;
 
-  # AWWW
-  services.awww.enable = true;
 }

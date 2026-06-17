@@ -22,6 +22,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                backupFileExtension = "bak";
                 users.tom = ./home.nix;
                 extraSpecialArgs = { inherit inputs; };
               };
