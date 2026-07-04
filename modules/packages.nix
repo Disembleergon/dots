@@ -2,6 +2,10 @@
 {
   home.packages = with pkgs; [
 
+    # GENERAL
+    bitwig-studio
+    cables
+
     # UTILITY
     ffmpeg
 
