@@ -17,11 +17,16 @@
         auto-format = true;
         formatter.command = "nixfmt";
       }
+      {
+        name = "rust";
+        auto-format = true;
+      }
     ];
 
     extraPackages = with pkgs; [
       nixd
       nixfmt
+      rust-analyzer
     ];
   };
 
