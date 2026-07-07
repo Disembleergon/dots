@@ -5,6 +5,7 @@
     # GENERAL
     bitwig-studio
     cables
+    tuner
 
     # UTILITY
     ffmpeg
