@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   home.packages = with pkgs; [
 
@@ -15,7 +15,10 @@
   ##################################################
 
   # FIREFOX
-  programs.firefox.enable = true;
+  programs.firefox = {
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
+    enable = true;
+  };
 
   # FZF
   programs.fzf = {
