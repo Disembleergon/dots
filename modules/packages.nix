@@ -5,7 +5,6 @@
     # GENERAL
     bitwig-studio
     cables
-    tuner
 
     # UTILITY
     ffmpeg
@@ -29,5 +28,11 @@
 
   # GCC
   programs.gcc.enable = true;
+
+  # DIRENV
+  programs.direnv = {
+    enable = true;
+    silent = true;
+  };
 
 }
