@@ -21,6 +21,9 @@
     enable = true;
   };
 
+  # THUNDERBIRD
+  programs.thunderbird.enable = true;
+
   # FZF
   programs.fzf = {
     enable = true;
