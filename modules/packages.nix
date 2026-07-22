@@ -6,6 +6,7 @@
     bitwig-studio
     cables
     proton-vpn
+    mpv
 
     # UTILITY
     ffmpeg
