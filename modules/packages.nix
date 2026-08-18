@@ -4,6 +4,7 @@
 
     # GENERAL
     bitwig-studio
+    ardour
     cables
     proton-vpn
     mpv
