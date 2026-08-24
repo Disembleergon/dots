@@ -7,10 +7,16 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    thyx.url = "github:rccyx/thyx";
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }@inputs:
+    {
+      nixpkgs,
+      home-manager,
+      thyx,
+      ...
+    }@inputs:
     {
       nixosConfigurations = {
         toms-nixos = nixpkgs.lib.nixosSystem {
@@ -18,6 +24,8 @@
           modules = [
             ./configuration.nix
             home-manager.nixosModules.home-manager
+            thyx.nixosModules.default
+
             {
               home-manager = {
                 useGlobalPkgs = true;

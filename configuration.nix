@@ -97,10 +97,13 @@
     ];
   };
 
-  # KDE
+  # KDE + SDDM
   services = {
-    displayManager.plasma-login-manager.enable = true;
     desktopManager.plasma6.enable = true;
+    displayManager.sddm = {
+      thyx.enable = true;
+      wayland.enable = true;
+    };
   };
 
   # FONT
