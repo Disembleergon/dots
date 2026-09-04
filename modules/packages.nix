@@ -9,6 +9,9 @@
     proton-vpn
     mpv
 
+    # DEV
+    devenv
+
     # UTILITY
     ffmpeg
 
