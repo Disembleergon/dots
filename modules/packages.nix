@@ -14,6 +14,7 @@
 
     # UTILITY
     ffmpeg
+    (bottles.override { removeWarningPopup = true; })
 
   ];
 
