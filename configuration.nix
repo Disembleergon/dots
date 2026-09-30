@@ -121,6 +121,9 @@
     openFirewall = true;
   };
 
+  # KDE PARTITION MANAGER
+  programs.partition-manager.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
