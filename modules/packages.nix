@@ -28,6 +28,9 @@
   # THUNDERBIRD
   programs.thunderbird.enable = true;
 
+  # OBSIDIAN
+  programs.obsidian.enable = true;
+
   # FZF
   programs.fzf = {
     enable = true;
