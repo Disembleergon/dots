@@ -111,6 +111,9 @@
     nerd-fonts.jetbrains-mono
   ];
 
+  # STEAM
+  programs.steam.enable = true;
+
   # ZSH
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
