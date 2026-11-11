@@ -94,6 +94,7 @@
       "networkmanager"
       "wheel"
       "video"
+      "dialout"
     ];
   };
 
