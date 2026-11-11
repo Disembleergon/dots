@@ -10,6 +10,7 @@
     mpv
 
     # DEV
+    arduino-ide
     devenv
 
     # UTILITY
