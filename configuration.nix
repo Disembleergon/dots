@@ -95,6 +95,7 @@
       "wheel"
       "video"
       "dialout"
+      "tty"
     ];
   };
 
