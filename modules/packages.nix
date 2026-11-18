@@ -8,6 +8,7 @@
     cables
     proton-vpn
     mpv
+    telegram-desktop
 
     # DEV
     arduino-ide
